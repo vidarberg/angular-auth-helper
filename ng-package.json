@@ -1,0 +1,14 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/auth-helper",
+  "lib": {
+    "entryFile": "src/public_api.ts",
+    "umdModuleIds": {
+      "angular-auth-oidc-client": "_"
+    }
+  },
+  "whitelistedNonPeerDependencies": [
+    "tslib",
+    "angular-auth-oidc-client"
+  ]
+}
