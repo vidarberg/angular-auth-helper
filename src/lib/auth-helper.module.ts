@@ -5,7 +5,8 @@ import { AuthModule, OidcSecurityService, OpenIDImplicitFlowConfiguration, OidcC
 import { SendToLoginComponent } from './send-to-login/send-to-login.component';
 import { RedirectFromServerComponent } from './redirect-from-server/redirect-from-server.component';
 import { SendToLogoutComponent } from './send-to-logout/send-to-logout.component';
-export { SendToLoginComponent, RedirectFromServerComponent, SendToLogoutComponent };
+import { AuthHelperService } from './auth-helper.service';
+export { SendToLoginComponent, RedirectFromServerComponent, SendToLogoutComponent, AuthHelperService };
 
 const AuthorizationConfigService = new InjectionToken<AuthorizationConfig>("AuthorizationConfig");
 
@@ -33,7 +34,8 @@ export interface AuthorizationConfig {
     RedirectFromServerComponent
   ],
   providers: [
-    OidcConfigService
+    OidcConfigService,
+    AuthHelperService
   ],
   exports: [
     SendToLoginComponent,

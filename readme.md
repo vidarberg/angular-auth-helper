@@ -74,8 +74,11 @@ Then, configure the identity server and behavior like this:
     ]
 ```
 
-Now you can create a HomeComponent and get the logged in user like this:
+Now you can create a HomeComponent and get the access- and id-token like this:
 
-```
-@todo
+```typescript
+    constructor(private auth: AuthHelperService) {
+        let accessToken = auth.getToken();
+        let idToken = auth.getIdToken();
+    }
 ```
